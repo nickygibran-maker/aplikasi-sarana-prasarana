@@ -1,1 +1,0 @@
-document.addEventListener('DOMContentLoaded',()=>{const b=document.querySelector('.menu'),s=document.querySelector('.sidebar');if(b&&s)b.onclick=()=>s.classList.toggle('show');document.querySelectorAll('.logout').forEach(x=>x.onclick=e=>{if(!confirm('Yakin ingin logout?'))e.preventDefault()});});
