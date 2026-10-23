@@ -1,0 +1,73 @@
+PANDUAN HOSTING GRATIS - APLIKASI SARANA DAN PRASARANA
+====================================================
+
+Paket ini disiapkan untuk hosting yang mendukung PHP dan MySQL. Contoh penyedia:
+InfinityFree (https://www.infinityfree.com/). Paket gratis dapat memiliki batas
+penggunaan dan tidak menjamin website selalu aktif.
+
+PENTING
+- Belum ada akun atau alamat website yang dibuat dari paket ZIP ini.
+- Jangan mengirim password hosting/database ke orang lain atau ke chat.
+- Jangan memakai password contoh admin untuk penggunaan publik; ubah setelah login.
+- Database di hosting adalah database baru. Data lokal tidak ikut online sampai
+  file SQL diimpor.
+
+A. BUAT AKUN DAN ALAMAT GRATIS
+1. Buka https://www.infinityfree.com/ lalu daftar menggunakan email milikmu.
+2. Verifikasi email dan masuk ke area akun.
+3. Buat hosting account dan pilih free subdomain yang tersedia.
+4. Catat alamat website yang diberikan.
+5. Buka Control Panel hosting dan cari menu MySQL Databases.
+
+B. BUAT DATABASE
+1. Buat database MySQL baru lewat panel hosting.
+2. Catat empat nilai yang diberikan: MySQL hostname, database name, username,
+   dan password. Jangan menebak hostname; gunakan yang tampil di panel.
+3. Buka phpMyAdmin dari panel hosting.
+4. Pilih database yang baru dibuat, lalu gunakan menu Import.
+5. Unggah file DATABASE/sarpras.sql dan jalankan import.
+   File SQL ini membuat tabel admin, siswa, kategori, aspirasi, dan histori.
+   Pastikan import selesai tanpa error.
+
+C. ATUR KONEKSI
+1. Buka MODEL/config.php di paket ini sebelum upload, atau edit file tersebut
+   melalui File Manager hosting setelah upload.
+2. Ganti nilai berikut sesuai persis dengan panel hosting:
+   host     = MySQL hostname
+   username = MySQL username
+   password = MySQL password
+   database = nama database lengkap
+3. Jangan gunakan localhost/root/kata sandi kosong kecuali panel hosting memang
+   menyatakan nilai itu. Nama database/user hosting sering memiliki awalan akun.
+4. Simpan file. Jangan membagikan MODEL/config.php kepada orang lain.
+
+D. UPLOAD FILE APLIKASI
+1. Ekstrak ZIP di komputer.
+2. Buka File Manager hosting, lalu masuk ke folder web root yang disediakan
+   panel hosting (pada sebagian akun InfinityFree bernama htdocs).
+3. Unggah isi folder aplikasi-sarana-prasarana ke folder web root tersebut,
+   sehingga index.php berada langsung di web root, bukan di folder bertingkat.
+4. Pastikan folder ASSETS/GAMBAR bisa ditulisi PHP agar foto laporan dapat disimpan.
+   Jika unggah foto gagal, periksa batas ukuran unggahan hosting dan izin folder.
+5. Buka alamat subdomain di browser. Jika perlu, aktifkan SSL/HTTPS dari panel.
+
+E. LOGIN UJI COBA DARI DATABASE CONTOH
+Admin: username admin01, password admin123
+Siswa: NIS 1000000001
+
+Data di atas adalah data contoh yang tersimpan di DATABASE/sarpras.sql.
+Segera ganti password admin contoh setelah masuk dan sebelum membagikan website.
+Login siswa menggunakan NIS yang ada pada tabel siswa.
+
+F. JIKA WEBSITE ERROR
+- Pesan database belum terhubung: cek empat nilai MODEL/config.php.
+- Tabel tidak ditemukan: pilih database yang benar saat impor DATABASE/sarpras.sql.
+- Halaman kosong/500: cek error log di panel hosting; jangan aktifkan tampilan
+  error PHP untuk pengunjung umum.
+- Foto gagal: cek izin tulis ASSETS/GAMBAR dan batas upload hosting.
+- Gambar atau CSS hilang: pastikan struktur folder di-upload lengkap.
+
+Catatan: ZIP ini berisi penyesuaian konfigurasi dan panduan hosting. Website belum
+bisa diakses publik sampai akun hosting dibuat, database diimpor, konfigurasi
+sesuai akun diisi, dan file diunggah. Hosting gratis juga dapat membatasi fitur
+atau lalu lintas; uji semua fitur sebelum digunakan sungguhan.
