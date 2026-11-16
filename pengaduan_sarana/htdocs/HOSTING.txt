@@ -1,0 +1,30 @@
+PANDUAN UPLOAD KE HOSTING (InfinityFree / hosting PHP + MySQL)
+==============================================================
+
+ISI PAKET
+- index.php, CONTROLLER/, MODEL/, VIEW/, template/, ASSETS/, DATABASE/sarpras_final.sql
+- MODEL/config.php sudah berisi data database hosting (jangan dibagikan)
+
+LANGKAH 1 - Upload file
+1. Buka panel hosting > File Manager > masuk ke folder htdocs.
+2. Upload aplikasi_sarana_prasarana.zip ke htdocs, lalu Extract.
+   (Atau upload isi folder ini langsung ke htdocs.)
+3. Pastikan index.php berada langsung di dalam htdocs, bukan di folder lain.
+
+LANGKAH 2 - Database
+1. Buka phpMyAdmin, pilih database hosting kamu (if0_43250414_sarpras).
+2. Buka tab SQL, paste isi DATABASE/sarpras_final.sql, lalu Go.
+   File ini membuat ulang semua tabel dan mengisi data contoh.
+   PERHATIAN: data yang sudah ada di tabel tersebut akan terhapus.
+
+LANGKAH 3 - Cek koneksi
+Buka https://NAMA-DOMAIN-KAMU/ lalu login:
+   Admin : admin01 / admin123      (segera ganti setelah berhasil masuk)
+   Siswa : NIS 2026101 / siswa123  (siswa bisa ganti password di menu Profil)
+
+Jika muncul "Database belum terhubung", periksa MODEL/config.php
+(host, username, password, dan nama database harus sama dengan panel hosting).
+
+KEAMANAN
+- Ganti password admin dan semua password siswa contoh sebelum dibagikan.
+- Jangan membagikan MODEL/config.php.
